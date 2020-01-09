@@ -16,7 +16,7 @@ class CategoryTest < ActiveSupport::TestCase
 
   test "category naem should be unique" do
     dup_category = @category.dup
-    dup_category.name = @category.name.uppercase
+    dup_category.name = @category.name.upcase
     @category.save
     assert_not dup_category.valid?
   end
