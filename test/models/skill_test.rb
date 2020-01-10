@@ -3,7 +3,7 @@ require 'test_helper'
 class SkillTest < ActiveSupport::TestCase
   def setup
     _category = Category.create(name: 'category')
-    @skill = Skill.new(category_id: _category, name: 'skill')
+    @skill = Skill.new(category_id: _category.id, name: 'skill')
   end
 
   test 'should be valid' do
