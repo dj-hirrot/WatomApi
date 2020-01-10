@@ -14,4 +14,11 @@ class SkillTest < ActiveSupport::TestCase
     @skill.name = ' '
     assert_not @skill.valid?
   end
+
+  test 'name should be unique' do
+    dup_skill = @skill.dup
+    dup_skill.name = @skill.name.upcase
+    @skill.save
+    assert_not dup_skill.valid?
+  end
 end
